@@ -83,7 +83,7 @@ print("Initial amount: ", get_current_investment_amount(get_seedrs_profile()))
 
 
 # debugging makes the alert run on startup and ignores trigger case
-Debugging = True
+Debugging = False
 InvestmentAmount = get_current_investment_amount(get_seedrs_profile())
 
 
