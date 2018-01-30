@@ -1,5 +1,8 @@
 # Seedrs Crowdfunding Tracker
 
+####Sponsored by
+* My Colleagues [Yatter Ltd](http://yatter.social)
+
 ## Getting Started with the application
 
 1. Download the application from our website:
