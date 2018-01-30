@@ -37,14 +37,14 @@ Windows 7 doesn't have notifications, therefore you may need to change the confi
 
 ### Testing
 
-Inside the YatterNotifier.py change Debugging=False to Debuggin=True, this forces it to believe their is a change in, investment.
+Inside the YatterNotifier.py change Debugging=False to Debugging=True, this forces it to believe their is a change in, investment.
 
 ## Deployment
 To build this into an executable run:
 ```
 python setup.py build
 ```
-note: windows 7 has an issue, where you need to copy the "VCRUNTIME140.dll" from the build/exe.win32-3.6/lib folder, into the folder where the exe is, e.g. in build/exe.win32-3.6/.
+*note:* windows 7 has an issue, where you need to copy the "VCRUNTIME140.dll" from the build/exe.win32-3.6/lib folder, into the folder where the exe is, e.g. in build/exe.win32-3.6/.
 
 for more information on exe packaging, please look at [cx_Freeze](http://cx-freeze.readthedocs.io/en/latest/index.html)
 
