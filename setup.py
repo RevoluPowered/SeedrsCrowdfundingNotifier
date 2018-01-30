@@ -11,8 +11,6 @@ build_exe_options = {
         "win32api",
         "pywintypes",
         "plyer",
-        "pyttsx3",
-        "pyttsx3.drivers.nsss",
         "requests.compat",
         "urllib3",
     ],
