@@ -18,7 +18,7 @@
 6. To disable windows notifications set show_notifications to false.
 7. Change the Seedrs_url in the configuration file, to your Seedrs url for your crowd fund.
 8. Change the reload time, (it is in seconds, do not change lower than 300 seconds; we will not be held liable for any inappropriate usage)
-9. run "Yatter Notifier.exe" and you should see a black window open, leave this running in the background.
+9. Run "Yatter Notifier.exe" and you should see a black window open, leave this running in the background.
 10. Report any issues or requests here: [click here](https://github.com/RevoluPowered/SeedrsCrowdfundingNotifier/issues)
 
 You can also contact me directly at gordon@gordonite.tech
