@@ -7,22 +7,27 @@ build_exe_options = {
         "os",
         "idna",
         "multiprocessing",
-        "pyttsx3.drivers.sapi5",
         "win32com.client",
         "win32api",
-        "plyer"
+        "pywintypes",
+        "plyer",
+        "pyttsx3",
+        "pyttsx3.drivers.nsss",
+        "requests.compat",
+        "urllib3",
     ],
     "include_files": [
         "notification.ico",
         "notification_sound.mp3",
         "config.json"
     ],
-    "include_msvcr":True
+    "include_msvcr": True
 }
+
 
 setup(
     name = "Yatter Seedrs Notifier",
     version = "0.1",
-    description = "A notification tool for the seedrs platform",
+    description = "A notification tool for the Seedrs platform",
     options = {"build_exe": build_exe_options},
-    executables = [Executable("YatterNotifier.py")])
+    executables = [Executable("YatterNotifier.py", icon='notification.ico')])
