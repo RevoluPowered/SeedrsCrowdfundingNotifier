@@ -12,9 +12,10 @@ build_exe_options = {
         "win32api",
         "plyer"
     ],
-    "include_files" : [
+    "include_files": [
         "notification.ico",
-        "notification_sound.mp3"
+        "notification_sound.mp3",
+        "config.json"
     ],
     "include_msvcr":True
 }

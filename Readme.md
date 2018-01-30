@@ -7,23 +7,22 @@
 
 1. Download the application from our website:
 2. Extract the zip file somewhere.
-3. Run the application "Yatter Notifier.exe"
-4. The application will close, and you can now edit the config.json file in notepad.
+3. Edit the config.json file in notepad.
 ```
 {
-    "play_sound": false,
+    "play_sound": true,
     "reload_time": 300,
     "seedrs_url": "https://www.seedrs.com/yatter",
     "show_notification": true
 }
 ```
-5. To enable text to speech change play_sound to true.
-6. To disable windows notifications set show_notifications to false.
-7. Change the Seedrs_url in the configuration file, to your Seedrs url for your crowd fund.
-8. Change the reload time, (it is in seconds, do not change lower than 300 seconds; we will not be held liable for any inappropriate usage)
-9. Run "Yatter Notifier.exe" and you should see a black window open, leave this running in the background.
-10. Report any issues or requests here: [click here](https://github.com/RevoluPowered/SeedrsCrowdfundingNotifier/issues)
-
+4. To enable text to speech change play_sound to true.
+5. To disable windows notifications set show_notifications to false.
+6. Change the Seedrs_url in the configuration file, to your Seedrs url for your crowd fund.
+7. Change the reload time, (it is in seconds, do not change lower than 300 seconds; we will not be held liable for any inappropriate usage)
+8. Run "Yatter Notifier.exe" and you should see a black window open, leave this running in the background, you can minimize it and ignore it.
+9. Report any issues or requests here: [click here](https://github.com/RevoluPowered/SeedrsCrowdfundingNotifier/issues)
+10. You will now receive notifications from your computer, make sure your volume is not muted.
 You can also contact me directly at gordon@gordonite.tech
 
 ## Getting Started with development
