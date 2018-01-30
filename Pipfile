@@ -1,0 +1,18 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+"pyttsx3" = "*"
+plyer = "*"
+lxml = "*"
+playsound = "*"
+cx-freeze = "*"
+
+
+[dev-packages]
+
