@@ -52,10 +52,10 @@ for more information on exe packaging, please look at [cx_Freeze](http://cx-free
 
 * [cx-freeze](http://cx-freeze.readthedocs.io/en/latest/index.html) - For packaging
 * [Python 3.6](https://www.python.org/) - Programming language
-* [Pyttsx3] - Text to speech synthesis
+* [Pyttsx3](https://pypi.python.org/pypi/pyttsx3/2.6) - Text to speech synthesis
 * [win32](https://pypi.python.org/pypi/pypiwin32/220) - Windows 32 API access
-* [playsound] - For playing sounds when investment is found
-* [plyer] - Platform Notifications
+* [playsound](https://pypi.python.org/pypi/playsound) - For playing sounds when investment is found
+* [plyer](https://pypi.python.org/pypi/plyer/1.3.0) - Platform Notifications
 
 ## Authors
 
