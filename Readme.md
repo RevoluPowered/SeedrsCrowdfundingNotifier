@@ -1,6 +1,27 @@
 # Seedrs Crowdfunding Tracker
 
+## Getting Started with the application
 
+1. Download the application from our website:
+2. Extract the zip file somewhere.
+3. Run the application "Yatter Notifier.exe"
+4. The application will close, and you can now edit the config.json file in notepad.
+```
+{
+    "play_sound": false,
+    "reload_time": 300,
+    "seedrs_url": "https://www.seedrs.com/yatter",
+    "show_notification": true
+}
+```
+5. To enable text to speech change play_sound to true.
+6. To disable windows notifications set show_notifications to false.
+7. Change the Seedrs_url in the configuration file, to your Seedrs url for your crowd fund.
+8. run "Yatter Notifier.exe" and you should see a black window open, leave this running in the background.
+9. Get notified of investment.
+10. Report any issues or requests here: [click here](https://github.com/RevoluPowered/SeedrsCrowdfundingNotifier/issues)
+
+You can also contact me directly at gordon@gordonite.tech
 
 ## Getting Started with development
 
