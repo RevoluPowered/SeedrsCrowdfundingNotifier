@@ -2,5 +2,7 @@
     "play_sound": true,
     "reload_time": 60,
     "seedrs_url": "https://www.seedrs.com/yatter",
-    "show_notification": true
+    "show_notification": true,
+    "text_to_speech": true,
+    "debugging_enabled" : false
 }

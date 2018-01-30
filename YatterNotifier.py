@@ -8,12 +8,29 @@ from decimal import Decimal
 from playsound import playsound
 from pathlib import Path
 from logging import basicConfig, info, DEBUG
+import pyttsx3
 import json
 import os
 
 basicConfig(filename='polling.log', level=DEBUG)
 
-#Engine = pyttsx3.init(debug=True)
+Engine = None
+
+def InitSpeechEngine():
+
+    global Engine
+    for attempt in range(10):
+        try:
+            info("activate speech service")
+            Engine = pyttsx3.init(debug=False)
+            time.sleep(1.0)
+        except:
+            info("activate speech service, stage one")
+        else:
+            info("Successfully connected locally to speech service")
+            break
+    # we failed all the attempts - deal with the consequences.
+
 
 app_dir = os.getcwd()
 
@@ -23,14 +40,6 @@ cfg_path = Path("config.json")
 # Config globals
 Config = dict()
 
-# execute notification
-#osnotify.notify(
-#    title='Seedrs New Investment Received',
-#    message='Investment amount received £',
-#    ticker='r',
-#    app_name='Investment',
-#    app_icon='notification.ico'
-#)
 
 def load_config():
     """ load configuration file, if one doesn't exist create it"""
@@ -45,7 +54,9 @@ def load_config():
                 'seedrs_url': 'https://www.seedrs.com/yatter',
                 'reload_time': 300,
                 'play_sound': False,
-                'show_notification': True
+                'show_notification': True,
+                'text_to_speech': True,
+                'debugging_enabled': False
             }
 
             json.dump(config_new, json_data_file, sort_keys=True, indent=4)
@@ -53,7 +64,7 @@ def load_config():
 
 load_config()
 
-
+Debugging = Config['debugging_enabled']
 
 
 def get_seedrs_profile():
@@ -83,11 +94,8 @@ print("Initial amount: ", get_current_investment_amount(get_seedrs_profile()))
 
 
 # debugging makes the alert run on startup and ignores trigger case
-Debugging = False
+
 InvestmentAmount = get_current_investment_amount(get_seedrs_profile())
-
-
-
 
 
 
@@ -109,12 +117,10 @@ def request_investment_info():
         # Work out investment amount
         received_amount = investment_amount - InvestmentAmount
         info("Investment amount changed")
-        # is configuration enabled for playing text to speech notification
 
-            #Engine.say('Investment amount received: £' + str(received_amount)+ ".")
-            #Engine.say('Investment percentage is now: ' + str(InvestorCountDelta) + ".")
-            #Engine.say('We now have: ' + get_investment_count(seedrs) + ' investors.')
-            #Engine.say('Our investment capital is now: £' + str(investment_amount))
+        # do we want notify sounds?
+        if Config['play_sound']:
+            playsound('notification_sound.mp3')
 
         # are the desktop notifications working
         if Config['show_notification']:
@@ -126,16 +132,19 @@ def request_investment_info():
                 app_icon='notification.ico'
             )
 
-        if Config['play_sound']:
-            playsound('notification_sound.mp3')
-
-      # Engine.runAndWait()
-
+        # is configuration enabled for playing text to speech notification
+        if Config['text_to_speech']:
+            Engine.say('Investment amount received: £' + str(received_amount)+ ".")
+            Engine.say('Investment percentage is now: ' + str(investment_percentage) + ".")
+            Engine.say('We now have: ' + get_investment_count(seedrs) + ' investors.')
+            Engine.say('Our investment capital is now: £' + str(investment_amount))
+            Engine.runAndWait()
 
 
 PollingInterval = float(Config['reload_time'])
 
-
+if Config['text_to_speech']:
+    InitSpeechEngine()
 
 osnotify.notify(
     title='Seedrs Notifications Activated',
@@ -152,8 +161,8 @@ def investment_update(sc):
     request_investment_info()
     s.enter(PollingInterval, 1, investment_update, (sc,))
 
-# wait 10 seconds before running first poll
-s.enter(10, 1, investment_update, (s,))
+# wait 5 seconds before running first poll
+s.enter(5, 1, investment_update, (s,))
 s.run()
 
 

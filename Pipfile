@@ -12,6 +12,7 @@ plyer = "*"
 lxml = "*"
 playsound = "*"
 cx-freeze = "*"
+retrying = "*"
 
 
 [dev-packages]

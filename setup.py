@@ -13,6 +13,7 @@ build_exe_options = {
         "plyer",
         "requests.compat",
         "urllib3",
+        "pyttsx3"
     ],
     "include_files": [
         "notification.ico",
